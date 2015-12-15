@@ -482,13 +482,10 @@ namespace encryptDecrypt
                 //MessageBox.Show("No text set");
                 return;
             }
-            string enc = textBox1.Text;
-
-            string encstring = StringCipher.Encrypt(enc, "pass");
-
-            GlobalVar.CryptString = encstring;
-            textBox2.Text = encstring;
-            textBox1.Text = "";
+            string clearText = textBox1.Text.Trim();
+            label3.Visible = false;
+            textBox2.Text = "";
+            button1.Enabled = true;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -504,13 +501,10 @@ namespace encryptDecrypt
                 //MessageBox.Show("No text set");
                 return;
             }
-            string enc = textBox2.Text;
-
-            string decstring = StringCipher.Decrypt(enc, "pass");
-
-            GlobalVar.CryptString = decstring;
-            textBox1.Text = decstring;
-            textBox2.Text = "";
+            string cipherText = textBox2.Text.Trim();
+            button2.Text = "";
+            button2.Visible = true;
+            label3.Visible = true;  
         }
 
 
