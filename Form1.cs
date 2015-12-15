@@ -487,6 +487,8 @@ namespace encryptDecrypt
             string encstring = StringCipher.Encrypt(enc, "pass");
 
             GlobalVar.CryptString = encstring;
+            textBox2.Text = encstring;
+            textBox1.Text = "";
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -507,6 +509,8 @@ namespace encryptDecrypt
             string decstring = StringCipher.Decrypt(enc, "pass");
 
             GlobalVar.CryptString = decstring;
+            textBox1.Text = decstring;
+            textBox2.Text = "";
         }
 
 
